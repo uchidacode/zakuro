@@ -1,0 +1,937 @@
+/* ざくろの木助産院 — トップページ */
+
+/* ===== ヒーロー ===== */
+
+.hero {
+  display: grid;
+  grid-template-columns: 470px 1fr;
+  height: 470px;
+  background: var(--paper);
+  /* デザインは1320px幅想定。広い画面でもメディアの切り抜き範囲を保つ */
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+.hero-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px 48px 44px 56px;
+}
+
+.hero-eyebrow {
+  font-size: 12.5px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  color: var(--accent2);
+  margin-bottom: 16px;
+}
+
+.hero-title {
+  font-family: var(--serif);
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1.42;
+  letter-spacing: 0.02em;
+  color: var(--accent);
+  margin: 0 0 18px;
+}
+
+.hero-title .marker {
+  background: linear-gradient(transparent 58%, rgba(255, 216, 96, 0.62) 58%);
+  padding: 0 1px;
+}
+
+.hero-lead {
+  font-size: 14.5px;
+  line-height: 2.05;
+  color: var(--ink-72);
+  margin: 0 0 26px;
+  text-wrap: pretty;
+}
+
+.hero-hours {
+  font-size: 13px;
+  color: var(--ink-55);
+  letter-spacing: 0.03em;
+  margin-bottom: 15px;
+}
+
+.btn-availability {
+  align-self: flex-start;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--accent);
+}
+
+.hero-media {
+  position: relative;
+  overflow: hidden;
+  background: var(--photo-bg);
+}
+
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  background: var(--photo-bg);
+  transition: opacity 0.7s ease;
+}
+
+.hero-video.is-hidden {
+  opacity: 0;
+}
+
+.hero-still {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.7s ease;
+  pointer-events: none;
+  background: var(--photo-bg);
+}
+
+.hero-still.is-visible {
+  opacity: 1;
+}
+
+.hero-still img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 42%;
+  display: block;
+}
+
+.hero-fade {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 140px;
+  background: linear-gradient(to right, var(--paper), rgba(243, 234, 224, 0));
+  pointer-events: none;
+}
+
+/* ===== 今月の空き状況 ===== */
+
+.availability {
+  padding: 72px 56px 76px;
+  scroll-margin-top: 74px;
+}
+
+.availability-grid {
+  display: grid;
+  grid-template-columns: 1fr 500px;
+  gap: 60px;
+  align-items: start;
+}
+
+.availability-copy {
+  padding-top: 12px;
+}
+
+.availability-copy .section-title {
+  margin-bottom: 14px;
+}
+
+.availability-lead {
+  font-size: 14px;
+  line-height: 2;
+  color: var(--ink-66);
+  margin: 0 0 22px;
+  text-wrap: pretty;
+}
+
+.availability-note {
+  font-size: 13px;
+  line-height: 1.95;
+  color: var(--ink-60);
+  margin: 0;
+  text-wrap: pretty;
+}
+
+.calendar-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 22px 22px 20px;
+  box-shadow: var(--shadow-float);
+}
+
+.calendar-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.calendar-nav-btn {
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.calendar-month {
+  font-family: var(--serif);
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+}
+
+.calendar-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  margin-bottom: 4px;
+}
+
+.calendar-weekdays span {
+  text-align: center;
+  font-size: 11.5px;
+  font-weight: 500;
+  color: rgba(43, 35, 38, 0.5);
+}
+
+.calendar-weekdays .sun {
+  color: #A26769;
+}
+
+.calendar-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  row-gap: 2px;
+}
+
+.calendar-day {
+  aspect-ratio: 1 / 0.95;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  border-radius: 10px;
+}
+
+.calendar-day.is-open {
+  cursor: pointer;
+}
+
+.calendar-day.is-selected {
+  background: rgba(109, 46, 70, 0.08);
+}
+
+.calendar-date {
+  font-size: 10.5px;
+  color: rgba(43, 35, 38, 0.38);
+  line-height: 1;
+}
+
+.calendar-mark {
+  font-size: 17px;
+  line-height: 1;
+}
+
+.mark-o { color: #6D2E46; }
+.mark-few { color: #A26769; }
+.mark-x { color: rgba(43, 35, 38, 0.42); }
+.mark-rest { color: rgba(43, 35, 38, 0.26); }
+
+.calendar-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line-soft);
+}
+
+.calendar-legend div {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.calendar-legend .calendar-mark {
+  font-size: 14px;
+}
+
+.calendar-legend span:last-child {
+  font-size: 12px;
+  color: var(--ink-60);
+}
+
+.calendar-cta {
+  margin-top: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 48px;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  animation: drawer-fade 0.2s ease;
+}
+
+.calendar-cta:hover {
+  color: #fff;
+}
+
+.calendar-cta[hidden] {
+  display: none;
+}
+
+.calendar-noscript {
+  margin: 8px 0 0;
+  font-size: 12.5px;
+  line-height: 1.8;
+  color: var(--ink-60);
+  text-align: center;
+}
+
+/* ===== 3つの入口 ===== */
+
+.entrances {
+  padding: 0 56px 84px;
+}
+
+.entrances-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.entrance-card {
+  display: block;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+
+.entrance-thumb {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: var(--photo-bg);
+}
+
+.entrance-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.entrance-body {
+  padding: 18px 20px 20px;
+}
+
+.entrance-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.entrance-title {
+  font-family: var(--serif);
+  font-size: 19px;
+  font-weight: 600;
+  color: var(--accent);
+  margin: 0;
+}
+
+.entrance-desc {
+  font-size: 13px;
+  line-height: 1.85;
+  color: var(--ink-66);
+  margin: 8px 0 0;
+  text-wrap: pretty;
+}
+
+/* ===== お住まいの市を選ぶ ===== */
+
+.towns {
+  padding: 0 56px 84px;
+}
+
+.towns-lead {
+  font-size: 14px;
+  line-height: 1.95;
+  color: var(--ink-62);
+  margin: 0 0 26px;
+  text-wrap: pretty;
+}
+
+.towns-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.town-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  min-height: 84px;
+  background: var(--card);
+  border: 1px solid rgba(109, 46, 70, 0.1);
+  border-radius: 14px;
+  padding: 14px 18px;
+}
+
+.town-card svg {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+.town-name {
+  font-family: var(--serif);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.town-hint {
+  font-size: 11.5px;
+  color: var(--ink-55);
+}
+
+.town-card--other {
+  background: transparent;
+  border: 1px dashed rgba(109, 46, 70, 0.32);
+}
+
+.town-card--other .town-name {
+  font-size: 16px;
+}
+
+.towns-note {
+  font-size: 13px;
+  line-height: 1.9;
+  color: var(--ink-55);
+  margin: 20px 2px 0;
+  text-wrap: pretty;
+}
+
+/* ===== ご利用までの流れ ===== */
+
+.flow {
+  padding: 0 56px 92px;
+}
+
+.flow-lead {
+  font-size: 14px;
+  line-height: 1.95;
+  color: var(--ink-62);
+  margin: 0 0 34px;
+  text-wrap: pretty;
+}
+
+.flow-track {
+  position: relative;
+}
+
+.flow-line {
+  position: absolute;
+  top: 22px;
+  left: 60px;
+  right: 60px;
+  height: 1px;
+  background: rgba(109, 46, 70, 0.2);
+}
+
+.flow-steps {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.flow-num {
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(109, 46, 70, 0.35);
+  border-radius: 50%;
+  background: var(--paper);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--serif);
+  font-size: 16px;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+
+.flow-step h3 {
+  font-family: var(--serif);
+  font-size: 19px;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 0 0 8px;
+}
+
+.flow-step p {
+  font-size: 13.5px;
+  line-height: 1.9;
+  color: var(--ink-66);
+  margin: 0;
+  text-wrap: pretty;
+}
+
+/* ===== 助産院について ===== */
+
+.about {
+  background: var(--paper-alt);
+  padding: 76px 56px 84px;
+  scroll-margin-top: 74px;
+}
+
+.about .section-title {
+  margin-bottom: 14px;
+}
+
+.about-lead {
+  font-size: 14px;
+  line-height: 2;
+  color: rgba(43, 35, 38, 0.7);
+  margin: 0 0 30px;
+  max-width: 640px;
+  text-wrap: pretty;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px 14px;
+  margin-bottom: 46px;
+}
+
+.gallery-item {
+  padding: 0;
+  border: none;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+}
+
+.gallery-thumb {
+  aspect-ratio: 4 / 5;
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--photo-bg);
+}
+
+.gallery-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.gallery-label {
+  margin-top: 8px;
+  font-family: var(--serif);
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.meals-title {
+  font-family: var(--serif);
+  font-size: 21px;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 0 0 10px;
+}
+
+.meals-lead {
+  font-size: 13.5px;
+  line-height: 1.9;
+  color: var(--ink-66);
+  margin: 0 0 18px;
+  text-wrap: pretty;
+}
+
+.meals-strip {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding: 2px 0 10px;
+}
+
+.meal-item {
+  flex: 0 0 auto;
+  width: 168px;
+  aspect-ratio: 1;
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--photo-bg);
+  padding: 0;
+  border: none;
+  cursor: pointer;
+}
+
+.meal-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ===== スタッフ ===== */
+
+.staff {
+  padding: 76px 56px 84px;
+}
+
+.staff-lead {
+  font-size: 14px;
+  line-height: 1.95;
+  color: var(--ink-62);
+  margin: 0 0 26px;
+  text-wrap: pretty;
+}
+
+.director-card {
+  display: flex;
+  gap: 26px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 20px;
+  margin-bottom: 34px;
+  box-shadow: var(--shadow-card);
+  max-width: 640px;
+}
+
+.director-photo {
+  flex-shrink: 0;
+  width: 130px;
+  aspect-ratio: 3 / 4;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--photo-bg);
+}
+
+.director-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 74% 52%;
+  display: block;
+}
+
+.director-info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.director-role {
+  font-size: 11.5px;
+  color: var(--accent2);
+  letter-spacing: 0.08em;
+}
+
+.director-name {
+  font-family: var(--serif);
+  font-size: 23px;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 4px 0 9px;
+}
+
+.director-bio {
+  font-size: 13.5px;
+  line-height: 1.85;
+  color: var(--ink-66);
+  margin: 0;
+  text-wrap: pretty;
+}
+
+.staff-grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 18px 14px;
+}
+
+.staff-photo {
+  aspect-ratio: 3 / 4;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #EFE1D2;
+}
+
+.staff-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+.staff-name {
+  margin-top: 7px;
+  font-family: var(--serif);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+.staff-role {
+  font-size: 10.5px;
+  color: var(--accent2);
+  margin-top: 1px;
+}
+
+/* ===== 場所と時間 ===== */
+
+.access {
+  background: var(--paper-alt);
+  padding: 76px 56px 84px;
+  scroll-margin-top: 74px;
+}
+
+.access .section-title {
+  margin-bottom: 28px;
+}
+
+.access-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.access-map {
+  position: relative;
+  aspect-ratio: 3 / 2;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #E8EAED;
+  box-shadow: inset 0 0 0 1px rgba(43, 35, 38, 0.06);
+}
+
+.access-map iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.access-row {
+  display: flex;
+  gap: 18px;
+  padding: 15px 0;
+  border-bottom: 1px solid var(--line-mid);
+}
+
+.access-row:last-child {
+  border-bottom: none;
+}
+
+.access-label {
+  flex-shrink: 0;
+  width: 70px;
+  font-size: 12px;
+  color: var(--accent2);
+  padding-top: 2px;
+}
+
+.access-value {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--ink);
+}
+
+.access-value .muted {
+  color: var(--ink-60);
+  font-size: 13px;
+}
+
+.access-row--links .access-value {
+  line-height: 1.8;
+}
+
+/* ===== フォトライトボックス ===== */
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 70;
+  background: rgba(24, 14, 18, 0.96);
+  display: flex;
+  flex-direction: column;
+  animation: drawer-fade 0.2s ease;
+}
+
+.lightbox[hidden] {
+  display: none;
+}
+
+body.lightbox-open {
+  overflow: hidden;
+}
+
+.lightbox-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 20px 24px 8px;
+}
+
+.lightbox-label {
+  font-family: var(--serif);
+  font-size: 15px;
+  color: rgba(243, 234, 224, 0.92);
+  letter-spacing: 0.04em;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.lightbox-close {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.lightbox-stage {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 0;
+  padding: 0 0 8px;
+}
+
+.lightbox-img {
+  max-width: 82%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.lightbox-prev,
+.lightbox-next {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 20%;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.lightbox-prev {
+  left: 0;
+  padding: 0 0 0 26px;
+  justify-content: flex-start;
+}
+
+.lightbox-next {
+  right: 0;
+  padding: 0 26px 0 0;
+  justify-content: flex-end;
+}
+
+.lightbox-foot {
+  padding: 6px 0 24px;
+}
+
+.lightbox-dots {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.lightbox-dots span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(243, 234, 224, 0.3);
+}
+
+.lightbox-dots span.is-active {
+  background: #F3EAE0;
+}
+
+.lightbox-thumbs {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 2px 24px;
+  justify-content: safe center;
+}
+
+.lightbox-thumb {
+  flex: 0 0 auto;
+  width: 56px;
+  height: 56px;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid transparent;
+  opacity: 0.5;
+  padding: 0;
+  background: none;
+}
+
+.lightbox-thumb.is-active {
+  border-color: #F3EAE0;
+  opacity: 1;
+}
+
+.lightbox-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}

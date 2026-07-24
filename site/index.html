@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1320">
+<title>ざくろの木助産院｜埼玉県久喜市</title>
+<meta name="description" content="埼玉県久喜市栗橋の、お産ができる助産院。時の流れがゆるむ古民家で、お産のときも、そのあとの毎日も。産後ケア・母乳相談・各種教室もLINEでご相談ください。">
+<link rel="icon" type="image/png" href="assets/zakuro-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/home.css">
+<script src="js/hero.js" defer></script>
+<script src="js/calendar.js" defer></script>
+<script src="js/lightbox.js" defer></script>
+</head>
+<body>
+
+<header class="site-header">
+  <a class="brand" href="./">
+    <img src="assets/zakuro-icon.png" alt="ざくろの木助産院">
+    <span class="brand-text">
+      <span class="brand-name">ざくろの木助産院</span>
+      <span class="brand-sub">埼玉県久喜市栗橋｜完全予約制</span>
+    </span>
+  </a>
+  <nav class="site-nav">
+    <a href="#availability">空き状況</a>
+    <a href="birth.html">お産のこと</a>
+    <a href="care.html">産後ケア</a>
+    <a href="services.html">相談・教室</a>
+    <a href="#about">助産院について</a>
+    <a href="#access">アクセス</a>
+  </nav>
+  <a class="btn-line" href="https://lin.ee/fa6u5WF" target="_blank" rel="noopener">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M4 4h16a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-8l-5 4v-4H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/></svg>
+    LINEで相談
+  </a>
+</header>
+
+<main>
+
+  <!-- ===== ヒーロー ===== -->
+  <div class="hero">
+    <div class="hero-copy">
+      <div class="hero-eyebrow">埼玉・栗橋の古民家から</div>
+      <h1 class="hero-title">久喜市で、<br><span class="marker">お産ができる</span><br>助産院。</h1>
+      <p class="hero-lead">時の流れがゆるむ家で、実家に帰るように。<br>お産のときも、そのあとの毎日も。</p>
+      <div class="hero-hours">月〜土　9:00–17:00　／　完全予約制</div>
+      <a class="btn-availability" href="#availability">
+        今月の空き状況を見る
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M6 1v9M2.5 6.5 6 10l3.5-3.5" stroke="var(--accent)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+    <div class="hero-media">
+      <video class="hero-video" autoplay muted playsinline preload="auto">
+        <source src="assets/hero.mp4" type="video/mp4">
+      </video>
+      <div class="hero-still">
+        <img src="assets/still-03.jpg" alt="院内の様子">
+      </div>
+      <div class="hero-fade"></div>
+    </div>
+  </div>
+
+  <!-- ===== 今月の空き状況 ===== -->
+  <section id="availability" class="availability">
+    <div class="container availability-grid">
+      <div class="availability-copy">
+        <h2 class="section-title">今月の空き状況</h2>
+        <p class="availability-lead">最新の予約状況です。気になる日を選ぶと、そのままLINEで確認できます。</p>
+        <p class="availability-note">「×」の日でも調整できる場合があります。ファミリー産後ケアは貸し切り対応です。<a class="link-underline" href="https://lin.ee/fa6u5WF" target="_blank" rel="noopener">LINEでご相談ください</a>。</p>
+      </div>
+      <div class="calendar-card">
+        <div class="calendar-head">
+          <button class="calendar-nav-btn" type="button" aria-label="前の月" aria-disabled="true">
+            <svg width="8" height="14" viewBox="0 0 8 14" fill="none" aria-hidden="true"><path d="M7 1 1 7l6 6" stroke="rgba(43,35,38,0.4)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="calendar-month">2026年 7月</div>
+          <button class="calendar-nav-btn" type="button" aria-label="次の月" aria-disabled="true">
+            <svg width="8" height="14" viewBox="0 0 8 14" fill="none" aria-hidden="true"><path d="M1 1l6 6-6 6" stroke="rgba(43,35,38,0.4)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+        <div class="calendar-weekdays">
+          <span class="sun">日</span><span>月</span><span>火</span><span>水</span><span>木</span><span>金</span><span>土</span>
+        </div>
+        <div class="calendar-days"></div>
+        <noscript>
+          <p class="calendar-noscript">空き状況の表示にはJavaScriptが必要です。最新の空きは<a class="link-underline" href="https://lin.ee/fa6u5WF">LINE</a>でお問い合わせください。</p>
+        </noscript>
+        <div class="calendar-legend">
+          <div><span class="calendar-mark mark-o">○</span><span>空きあり</span></div>
+          <div><span class="calendar-mark mark-few">△</span><span>残りわずか</span></div>
+          <div><span class="calendar-mark mark-x">×</span><span>予約不可</span></div>
+        </div>
+        <a class="calendar-cta" href="https://lin.ee/fa6u5WF" target="_blank" rel="noopener" hidden>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M4 4h16a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-8l-5 4v-4H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/></svg>
+          <span class="calendar-cta-label"></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 3つの入口 ===== -->
+  <section class="entrances">
+    <div class="container entrances-grid">
+      <a class="entrance-card" href="birth.html">
+        <div class="entrance-thumb">
+          <img src="assets/entrance-birth.jpg" alt="お産のこと" loading="lazy">
+        </div>
+        <div class="entrance-body">
+          <div class="entrance-title-row">
+            <h3 class="entrance-title">お産のこと</h3>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8M9 4l4 4-4 4" stroke="var(--accent)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <p class="entrance-desc">分娩費用、受け入れの条件、緊急時の嘱託医療機関（羽生総合病院）まで。</p>
+        </div>
+      </a>
+      <a class="entrance-card" href="care.html">
+        <div class="entrance-thumb">
+          <img src="assets/facility-04.jpg" alt="産後ケアのこと" loading="lazy">
+        </div>
+        <div class="entrance-body">
+          <div class="entrance-title-row">
+            <h3 class="entrance-title">産後ケアのこと</h3>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8M9 4l4 4-4 4" stroke="var(--accent)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <p class="entrance-desc">7つの自治体から委託。宿泊型・デイサービス型の空きと料金。</p>
+        </div>
+      </a>
+      <a class="entrance-card" href="services.html">
+        <div class="entrance-thumb">
+          <img src="assets/food-01.jpg" alt="そのほかの相談・教室" loading="lazy">
+        </div>
+        <div class="entrance-body">
+          <div class="entrance-title-row">
+            <h3 class="entrance-title">そのほかの相談・教室</h3>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8M9 4l4 4-4 4" stroke="var(--accent)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <p class="entrance-desc">授乳相談、ベビーマッサージ、ユーファイ教室、育児相談など。</p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== お住まいの市を選ぶ ===== -->
+  <section class="towns">
+    <div class="container">
+      <h2 class="section-title">お住まいの市を選ぶ</h2>
+      <p class="towns-lead">7つの自治体から産後ケアを委託されています。市を選ぶと、利用条件と申請先をご案内します。</p>
+      <div class="towns-grid">
+        <a class="town-card" href="care.html#town-kuki">
+          <span class="town-name">久喜市</span>
+          <span class="town-hint">生後4か月まで</span>
+          <svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8M9 4l4 4-4 4" stroke="rgba(109,46,70,0.5)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="town-card" href="care.html#town-kazo">
+          <span class="town-name">加須市</span>
+          <span class="town-hint">生後1年まで</span>
+          <svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8M9 4l4 4-4 4" stroke="rgba(109,46,70,0.5)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="town-card" href="care.html#town-saitama">
+          <span class="town-name">さいたま市</span>
+          <span class="town-hint">LINEで直接予約</span>
+          <svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8M9 4l4 4-4 4" stroke="rgba(109,46,70,0.5)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="town-card" href="care.html#town-sugito">
+          <span class="town-name">杉戸町</span>
+          <span class="town-hint">生後1年まで</span>
+          <svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8M9 4l4 4-4 4" stroke="rgba(109,46,70,0.5)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="town-card" href="care.html#town-koga">
+          <span class="town-name">古河市</span>
+          <span class="town-hint">宿泊型のみ</span>
+          <svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8M9 4l4 4-4 4" stroke="rgba(109,46,70,0.5)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="town-card" href="care.html#town-miyashiro">
+          <span class="town-name">宮代町</span>
+          <span class="town-hint">生後1年まで</span>
+          <svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8M9 4l4 4-4 4" stroke="rgba(109,46,70,0.5)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="town-card" href="care.html#town-satte">
+          <span class="town-name">幸手市</span>
+          <span class="town-hint">生後1年まで</span>
+          <svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 8h8M9 4l4 4-4 4" stroke="rgba(109,46,70,0.5)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="town-card town-card--other" href="services.html">
+          <span class="town-name">その他・自費の方</span>
+          <span class="town-hint">対象外でもご利用可</span>
+        </a>
+      </div>
+      <p class="towns-note">申請・審査には日数がかかります。まずは<a class="link-underline" href="https://lin.ee/fa6u5WF" target="_blank" rel="noopener">LINEでご相談</a>ください。</p>
+    </div>
+  </section>
+
+  <!-- ===== ご利用までの流れ ===== -->
+  <section class="flow">
+    <div class="container">
+      <h2 class="section-title">ご利用までの流れ</h2>
+      <p class="flow-lead">お産も産後ケアも、はじまりはLINEでのご相談から。</p>
+      <div class="flow-track">
+        <div class="flow-line"></div>
+        <div class="flow-steps">
+          <div class="flow-step">
+            <div class="flow-num">1</div>
+            <h3>LINEで相談する</h3>
+            <p>お産は妊娠中期ごろまでに、産後ケアは利用したい月の1〜2か月前が目安です。</p>
+          </div>
+          <div class="flow-step">
+            <div class="flow-num">2</div>
+            <h3>面談・申請</h3>
+            <p>お産は妊婦健診と面談で受け入れを確認します。産後ケアはお住まいの自治体へ申請を（さいたま市は当院へ直接）。</p>
+          </div>
+          <div class="flow-step">
+            <div class="flow-num">3</div>
+            <h3>ご予約の確定</h3>
+            <p>お産は36週までに予約金をお預かりして確定。産後ケアは日程が決まりしだいご連絡します。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 助産院について ===== -->
+  <section id="about" class="about">
+    <div class="container">
+      <h2 class="section-title">古民家の助産院</h2>
+      <p class="about-lead">築60年の古民家を、少しずつ手を入れて整えました。「落ち着く」「時の流れが止まっているよう」。ゆったりと、身体と心を休める時間になりますように。</p>
+      <div class="gallery-grid">
+        <button class="gallery-item" type="button" data-lightbox-group="fac" data-lightbox-label="お部屋「すいか」">
+          <div class="gallery-thumb"><img src="assets/facility-01.jpg" alt="お部屋「すいか」" loading="lazy"></div>
+          <div class="gallery-label">お部屋「すいか」</div>
+        </button>
+        <button class="gallery-item" type="button" data-lightbox-group="fac" data-lightbox-label="お部屋「りんご」">
+          <div class="gallery-thumb"><img src="assets/facility-04.jpg" alt="お部屋「りんご」" loading="lazy"></div>
+          <div class="gallery-label">お部屋「りんご」</div>
+        </button>
+        <button class="gallery-item" type="button" data-lightbox-group="fac" data-lightbox-label="お部屋「ざくろ」">
+          <div class="gallery-thumb"><img src="assets/facility-03.jpg" alt="お部屋「ざくろ」" loading="lazy"></div>
+          <div class="gallery-label">お部屋「ざくろ」</div>
+        </button>
+        <button class="gallery-item" type="button" data-lightbox-group="fac" data-lightbox-label="共有リビング">
+          <div class="gallery-thumb"><img src="assets/facility-08.jpg" alt="共有リビング" loading="lazy"></div>
+          <div class="gallery-label">共有リビング</div>
+        </button>
+        <button class="gallery-item" type="button" data-lightbox-group="fac" data-lightbox-label="トリートメントルーム">
+          <div class="gallery-thumb"><img src="assets/facility-02.jpg" alt="トリートメントルーム" loading="lazy"></div>
+          <div class="gallery-label">トリートメントルーム</div>
+        </button>
+        <button class="gallery-item" type="button" data-lightbox-group="fac" data-lightbox-label="ユーファイのハーブ">
+          <div class="gallery-thumb"><img src="assets/facility-09.jpg" alt="ユーファイのハーブ" loading="lazy"></div>
+          <div class="gallery-label">ユーファイのハーブ</div>
+        </button>
+        <button class="gallery-item" type="button" data-lightbox-group="fac" data-lightbox-label="洗面スペース">
+          <div class="gallery-thumb"><img src="assets/facility-06.jpg" alt="洗面スペース" loading="lazy"></div>
+          <div class="gallery-label">洗面スペース</div>
+        </button>
+        <button class="gallery-item" type="button" data-lightbox-group="fac" data-lightbox-label="お手洗い">
+          <div class="gallery-thumb"><img src="assets/facility-05.jpg" alt="お手洗い" loading="lazy"></div>
+          <div class="gallery-label">お手洗い</div>
+        </button>
+        <button class="gallery-item" type="button" data-lightbox-group="fac" data-lightbox-label="おむつ交換台">
+          <div class="gallery-thumb"><img src="assets/facility-07.jpg" alt="おむつ交換台" loading="lazy"></div>
+          <div class="gallery-label">おむつ交換台</div>
+        </button>
+        <button class="gallery-item" type="button" data-lightbox-group="fac" data-lightbox-label="ウォーターサーバー">
+          <div class="gallery-thumb"><img src="assets/facility-10.jpg" alt="ウォーターサーバー" loading="lazy"></div>
+          <div class="gallery-label">ウォーターサーバー</div>
+        </button>
+      </div>
+      <h3 class="meals-title">助産院ごはん</h3>
+      <p class="meals-lead">できる限り、体調や体質に合わせて。一食ずつ、心を込めておつくりします。</p>
+      <div class="meals-strip">
+        <button class="meal-item" type="button" data-lightbox-group="meal"><img src="assets/food-01.jpg" alt="助産院ごはん" loading="lazy"></button>
+        <button class="meal-item" type="button" data-lightbox-group="meal"><img src="assets/food-02.jpg" alt="助産院ごはん" loading="lazy"></button>
+        <button class="meal-item" type="button" data-lightbox-group="meal"><img src="assets/food-03.jpg" alt="助産院ごはん" loading="lazy"></button>
+        <button class="meal-item" type="button" data-lightbox-group="meal"><img src="assets/food-04.jpg" alt="助産院ごはん" loading="lazy"></button>
+        <button class="meal-item" type="button" data-lightbox-group="meal"><img src="assets/food-05.jpg" alt="助産院ごはん" loading="lazy"></button>
+        <button class="meal-item" type="button" data-lightbox-group="meal"><img src="assets/food-06.jpg" alt="助産院ごはん" loading="lazy"></button>
+        <button class="meal-item" type="button" data-lightbox-group="meal"><img src="assets/food-07.jpg" alt="助産院ごはん" loading="lazy"></button>
+        <button class="meal-item" type="button" data-lightbox-group="meal"><img src="assets/food-08.jpg" alt="助産院ごはん" loading="lazy"></button>
+        <button class="meal-item" type="button" data-lightbox-group="meal"><img src="assets/food-09.jpg" alt="助産院ごはん" loading="lazy"></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== スタッフ ===== -->
+  <section id="staff" class="staff">
+    <div class="container">
+      <h2 class="section-title">チームで、お母さんを支えます</h2>
+      <p class="staff-lead">助産師・保健師・看護師・保育士など、さまざまな専門職が関わっています。</p>
+      <div class="director-card">
+        <div class="director-photo">
+          <img src="assets/director.jpg" alt="高田 百香">
+        </div>
+        <div class="director-info">
+          <div class="director-role">院長・助産師</div>
+          <div class="director-name">高田 百香</div>
+          <p class="director-bio">「私が産む」「私が決める」に寄り添います。2022年、久喜市栗橋に開業。</p>
+        </div>
+      </div>
+      <div class="staff-grid">
+        <div class="staff-member">
+          <div class="staff-photo"><img src="assets/staff-01-kimura.jpg" alt="木村" loading="lazy"></div>
+          <div class="staff-name">木村</div>
+          <div class="staff-role">助産師</div>
+        </div>
+        <div class="staff-member">
+          <div class="staff-photo"><img src="assets/staff-02-taya.jpg" alt="田屋" loading="lazy"></div>
+          <div class="staff-name">田屋</div>
+          <div class="staff-role">助産師</div>
+        </div>
+        <div class="staff-member">
+          <div class="staff-photo"><img src="assets/staff-03-aoyagi.jpg" alt="青柳" loading="lazy"></div>
+          <div class="staff-name">青柳</div>
+          <div class="staff-role">助産師</div>
+        </div>
+        <div class="staff-member">
+          <div class="staff-photo"><img src="assets/staff-04-ogura.jpg" alt="小椋" loading="lazy"></div>
+          <div class="staff-name">小椋</div>
+          <div class="staff-role">助産師</div>
+        </div>
+        <div class="staff-member">
+          <div class="staff-photo"><img src="assets/staff-05-tanuma.jpg" alt="田沼" loading="lazy"></div>
+          <div class="staff-name">田沼</div>
+          <div class="staff-role">助産師</div>
+        </div>
+        <div class="staff-member">
+          <div class="staff-photo"><img src="assets/staff-06-sugawara.jpg" alt="菅原" loading="lazy"></div>
+          <div class="staff-name">菅原</div>
+          <div class="staff-role">助産師</div>
+        </div>
+        <div class="staff-member">
+          <div class="staff-photo"><img src="assets/staff-07-takahashi.jpg" alt="高橋 智恵" loading="lazy"></div>
+          <div class="staff-name">高橋 智恵</div>
+          <div class="staff-role">助産師</div>
+        </div>
+        <div class="staff-member">
+          <div class="staff-photo"><img src="assets/staff-08-naganuma.jpg" alt="長沼" loading="lazy"></div>
+          <div class="staff-name">長沼</div>
+          <div class="staff-role">助産師</div>
+        </div>
+        <div class="staff-member">
+          <div class="staff-photo"><img src="assets/staff-10-aoki.jpg" alt="青木" loading="lazy"></div>
+          <div class="staff-name">青木</div>
+          <div class="staff-role">助産師</div>
+        </div>
+        <div class="staff-member">
+          <div class="staff-photo"><img src="assets/staff-09-suzuki.jpg" alt="鈴木" loading="lazy"></div>
+          <div class="staff-name">鈴木</div>
+          <div class="staff-role">保健師</div>
+        </div>
+        <div class="staff-member">
+          <div class="staff-photo"><img src="assets/staff-11-mizui.jpg" alt="水井" loading="lazy"></div>
+          <div class="staff-name">水井</div>
+          <div class="staff-role">看護師</div>
+        </div>
+        <div class="staff-member">
+          <div class="staff-photo"><img src="assets/staff-12-kishimoto.jpg" alt="岸本" loading="lazy"></div>
+          <div class="staff-name">岸本</div>
+          <div class="staff-role">看護師</div>
+        </div>
+        <div class="staff-member">
+          <div class="staff-photo"><img src="assets/staff-13-nashimoto.jpg" alt="梨本" loading="lazy"></div>
+          <div class="staff-name">梨本</div>
+          <div class="staff-role">保育士</div>
+        </div>
+        <div class="staff-member">
+          <div class="staff-photo"><img src="assets/staff-14-saito.jpg" alt="斉藤" loading="lazy"></div>
+          <div class="staff-name">斉藤</div>
+          <div class="staff-role">保育士</div>
+        </div>
+        <div class="staff-member">
+          <div class="staff-photo"><img src="assets/staff-15-nakamura.jpg" alt="中村" loading="lazy"></div>
+          <div class="staff-name">中村</div>
+          <div class="staff-role">保育士</div>
+        </div>
+        <div class="staff-member">
+          <div class="staff-photo"><img src="assets/staff-16-tanaka.jpg" alt="田中" loading="lazy"></div>
+          <div class="staff-name">田中</div>
+          <div class="staff-role">サポート</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 場所と時間 ===== -->
+  <section id="access" class="access">
+    <div class="container">
+      <h2 class="section-title">場所と時間</h2>
+      <div class="access-grid">
+        <div class="access-map">
+          <iframe
+            src="https://www.google.com/maps?q=%E5%9F%BC%E7%8E%89%E7%9C%8C%E4%B9%85%E5%96%9C%E5%B8%82%E6%A0%97%E6%A9%8B%E6%9D%B11%E4%B8%81%E7%9B%AE19-7&output=embed&hl=ja&z=15"
+            title="ざくろの木助産院の地図"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen></iframe>
+        </div>
+        <div class="access-rows">
+          <div class="access-row">
+            <span class="access-label">住所</span>
+            <div class="access-value">〒349-1103<br>埼玉県久喜市栗橋東1丁目19-7</div>
+          </div>
+          <div class="access-row">
+            <span class="access-label">診療時間</span>
+            <div class="access-value">月〜土　9:00–17:00<br><span class="muted">完全予約制</span></div>
+          </div>
+          <div class="access-row">
+            <span class="access-label">電話</span>
+            <div class="access-value"><a href="tel:09017001103">090-1700-1103</a></div>
+          </div>
+          <div class="access-row access-row--links">
+            <span class="access-label">その他</span>
+            <div class="access-value"><a href="mailto:zakuronoki.jyosanin@gmail.com">メールでお問い合わせ</a><br><a href="https://www.instagram.com/zakuronoki.jyosanin" target="_blank" rel="noopener">Instagram @zakuronoki.jyosanin</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===== フッター ===== -->
+<footer id="line" class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h2 class="footer-title">まずは、お気軽に。</h2>
+        <p class="footer-lead">ご予約の前のご相談も、LINEでどうぞ。産後ケアは、自治体への申請が先に必要です。</p>
+        <div class="footer-line-row">
+          <a class="btn-line-big" href="https://lin.ee/fa6u5WF" target="_blank" rel="noopener">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--accent)" aria-hidden="true"><path d="M4 4h16a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-8l-5 4v-4H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/></svg>
+            LINEで相談する
+          </a>
+          <div class="footer-qr">
+            <img src="assets/line-qr.png" alt="公式LINEのQRコード" loading="lazy">
+            <a href="https://lin.ee/fa6u5WF" target="_blank" rel="noopener">lin.ee/fa6u5WF</a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="footer-org">ざくろの木助産院</div>
+        <div class="footer-info">
+          〒349-1103 埼玉県久喜市栗橋東1丁目19-7<br>
+          月〜土 9:00–17:00 ／ 完全予約制<br>
+          TEL <a class="footer-tel" href="tel:09017001103">090-1700-1103</a><br>
+          <a href="https://www.instagram.com/zakuronoki.jyosanin" target="_blank" rel="noopener">Instagram @zakuronoki.jyosanin</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-rule"></div>
+    <div class="footer-copy">© 2026 ざくろの木助産院</div>
+  </div>
+</footer>
+
+<!-- ===== フォトライトボックス ===== -->
+<div class="lightbox" hidden>
+  <div class="lightbox-head">
+    <div class="lightbox-label"></div>
+    <button class="lightbox-close" type="button" aria-label="閉じる">
+      <svg width="22" height="22" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 4l12 12M16 4L4 16" stroke="#F3EAE0" stroke-width="1.6" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+  <div class="lightbox-stage">
+    <img class="lightbox-img" src="" alt="">
+    <button class="lightbox-prev" type="button" aria-label="前へ">
+      <svg width="11" height="20" viewBox="0 0 9 16" fill="none" aria-hidden="true"><path d="M8 1 1 8l7 7" stroke="rgba(243,234,224,0.75)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <button class="lightbox-next" type="button" aria-label="次へ">
+      <svg width="11" height="20" viewBox="0 0 9 16" fill="none" aria-hidden="true"><path d="M1 1l7 7-7 7" stroke="rgba(243,234,224,0.75)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  <div class="lightbox-foot">
+    <div class="lightbox-dots"></div>
+    <div class="lightbox-thumbs"></div>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,804 @@
+/* ざくろの木助産院 — 下層ページ（分娩費用・産後ケア・サービス内容） */
+
+/* ===== ページヒーロー ===== */
+
+.page-hero {
+  position: relative;
+  height: 250px;
+  overflow: hidden;
+  background: var(--photo-bg);
+}
+
+.page-hero--birth {
+  height: 270px;
+}
+
+.page-hero > img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 45%;
+}
+
+.page-hero--birth > img {
+  object-position: center 38%;
+}
+
+.page-hero-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(40, 18, 26, 0.78), rgba(40, 18, 26, 0.1) 60%);
+}
+
+.page-hero-copy {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 30px;
+  padding: 0 56px;
+}
+
+.page-hero-eyebrow {
+  font-family: var(--serif);
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.86);
+  letter-spacing: 0.16em;
+  margin-bottom: 8px;
+}
+
+.page-hero-title {
+  font-family: var(--serif);
+  font-size: 34px;
+  font-weight: 600;
+  color: #fff;
+  margin: 0;
+  letter-spacing: 0.03em;
+}
+
+/* ===== 本文 ===== */
+
+.page-body {
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 36px 24px 100px;
+}
+
+.page-intro {
+  font-size: 14px;
+  line-height: 2;
+  color: var(--ink-72);
+  margin: 0 0 28px;
+  text-wrap: pretty;
+}
+
+.page-intro--tight {
+  margin-bottom: 14px;
+}
+
+.page-note {
+  font-size: 13px;
+  line-height: 1.95;
+  color: var(--ink-55);
+  margin: 26px 2px 0;
+  text-wrap: pretty;
+}
+
+/* ===== 料金カード ===== */
+
+.price-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 24px 26px;
+  margin-bottom: 14px;
+  box-shadow: var(--shadow-card);
+}
+
+.price-card-head {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.price-card-head--rows {
+  margin-bottom: 6px;
+}
+
+.price-num {
+  font-family: var(--serif);
+  font-size: 13px;
+  color: var(--accent2);
+}
+
+.price-card-title {
+  font-family: var(--serif);
+  font-size: 19px;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 0;
+}
+
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 0;
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.price-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.price-row--top {
+  border-bottom: none;
+  border-top: 1px solid var(--line-soft);
+  padding: 13px 0;
+}
+
+.price-row--top:last-child {
+  padding-bottom: 0;
+}
+
+.price-item {
+  min-width: 0;
+}
+
+.price-item-name {
+  font-size: 14px;
+  color: var(--ink);
+  text-wrap: pretty;
+}
+
+.price-item-note {
+  font-size: 11.5px;
+  line-height: 1.55;
+  color: var(--ink-50);
+  margin-top: 2px;
+  text-wrap: pretty;
+}
+
+.price-amount {
+  flex-shrink: 0;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.price-value {
+  font-family: var(--serif);
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.price-value--lg {
+  font-size: 18px;
+}
+
+.price-value--sm {
+  font-size: 16px;
+}
+
+.price-unit {
+  font-size: 11.5px;
+  color: var(--ink-50);
+}
+
+.price-card-foot {
+  font-size: 11.5px;
+  line-height: 1.6;
+  color: var(--ink-50);
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line-soft);
+}
+
+/* ===== 基本料金の分岐図 ===== */
+
+.branch-root {
+  display: flex;
+  justify-content: center;
+}
+
+.branch-pill {
+  font-family: var(--serif);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent);
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  padding: 6px 22px;
+}
+
+.branch-stem {
+  width: 1px;
+  height: 14px;
+  background: rgba(109, 46, 70, 0.25);
+  margin: 0 auto;
+}
+
+.branch-cross {
+  height: 1px;
+  background: rgba(109, 46, 70, 0.25);
+  margin: 0 25%;
+}
+
+.branch-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 16px;
+}
+
+.branch-box {
+  border: 1px solid rgba(109, 46, 70, 0.14);
+  border-radius: 14px;
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.branch-box h3 {
+  font-family: var(--serif);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 0;
+}
+
+.branch-note {
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--ink-55);
+}
+
+.branch-price {
+  font-family: var(--serif);
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--accent);
+  white-space: nowrap;
+  margin-top: 4px;
+}
+
+.branch-price .tilde {
+  font-size: 14px;
+}
+
+.branch-price-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.branch-price-row .branch-price {
+  margin-top: 0;
+}
+
+.breakdown-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 2px 0;
+  border: none;
+  border-bottom: 1px solid var(--underline);
+  background: transparent;
+  font-size: 11.5px;
+  font-weight: 500;
+  color: var(--accent);
+  cursor: pointer;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.breakdown-toggle svg {
+  transition: transform 0.2s ease;
+}
+
+.breakdown-toggle.is-open svg {
+  transform: rotate(180deg);
+}
+
+/* ===== 自宅分娩の内訳 ===== */
+
+.breakdown {
+  margin-top: 14px;
+  background: rgba(109, 46, 70, 0.04);
+  border-radius: 14px;
+  padding: 18px 20px;
+  animation: drawer-fade 0.2s ease;
+}
+
+.breakdown[hidden] {
+  display: none;
+}
+
+.breakdown-title {
+  font-family: var(--serif);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 10px;
+}
+
+.breakdown-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 14px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.breakdown-name {
+  font-size: 13px;
+  color: var(--ink);
+  line-height: 1.5;
+  text-wrap: pretty;
+}
+
+.breakdown-note {
+  font-size: 11px;
+  line-height: 1.55;
+  color: var(--ink-50);
+  margin-top: 2px;
+  text-wrap: pretty;
+}
+
+.breakdown-amount {
+  flex-shrink: 0;
+  white-space: nowrap;
+  display: flex;
+  align-items: baseline;
+}
+
+.breakdown-price {
+  display: inline-block;
+  min-width: 86px;
+  text-align: right;
+  font-family: var(--serif);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.breakdown-unit {
+  display: inline-block;
+  width: 54px;
+  padding-left: 5px;
+  text-align: left;
+  font-size: 11px;
+  color: var(--ink-50);
+}
+
+.breakdown-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 14px;
+  padding: 13px 0 2px;
+}
+
+.breakdown-total-label {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.breakdown-total-price {
+  font-family: var(--serif);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.breakdown-total-price .tilde {
+  font-size: 12px;
+}
+
+.breakdown-spacer {
+  display: inline-block;
+  width: 54px;
+}
+
+.breakdown-foot {
+  font-size: 11.5px;
+  line-height: 1.7;
+  color: var(--ink-55);
+  margin: 10px 0 0;
+  text-wrap: pretty;
+}
+
+/* ===== 出産育児一時金 ===== */
+
+.grant-card {
+  background: var(--accent);
+  color: var(--paper);
+  border-radius: 18px;
+  padding: 28px 30px;
+  margin: 24px 0;
+  box-shadow: 0 12px 26px rgba(109, 46, 70, 0.25);
+}
+
+.grant-title {
+  font-family: var(--serif);
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  letter-spacing: 0.02em;
+}
+
+.grant-lead {
+  font-size: 13.5px;
+  line-height: 1.95;
+  color: rgba(243, 234, 224, 0.85);
+  margin: 0 0 20px;
+  text-wrap: pretty;
+}
+
+.grant-example {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 18px 20px;
+}
+
+.grant-example-caption {
+  font-size: 11.5px;
+  color: rgba(243, 234, 224, 0.7);
+  letter-spacing: 0.06em;
+  margin-bottom: 12px;
+}
+
+.grant-line {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13.5px;
+  padding: 4px 0;
+  color: rgba(243, 234, 224, 0.9);
+}
+
+.grant-line--last {
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(243, 234, 224, 0.2);
+}
+
+.grant-result {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 13px 0 0;
+}
+
+.grant-result-label {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.grant-result-value {
+  font-family: var(--serif);
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--gold);
+}
+
+/* ===== 箇条書き ===== */
+
+.bullet-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.bullet-list--loose {
+  gap: 14px;
+}
+
+.bullet {
+  display: flex;
+  gap: 10px;
+}
+
+.bullet-dot {
+  flex-shrink: 0;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent2);
+  margin-top: 8px;
+}
+
+.bullet p {
+  font-size: 13.5px;
+  line-height: 1.9;
+  color: var(--ink-72);
+  margin: 0;
+  text-wrap: pretty;
+}
+
+.bullet-list--loose .bullet p {
+  font-size: 13px;
+  line-height: 1.85;
+  color: rgba(43, 35, 38, 0.7);
+}
+
+.em-accent {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* ===== 嘱託医療機関 ===== */
+
+.hospital-name {
+  font-family: var(--serif);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+
+.hospital-dept {
+  font-size: 12.5px;
+  color: var(--ink-60);
+  margin-bottom: 12px;
+}
+
+.hospital-addr {
+  font-size: 13.5px;
+  line-height: 1.9;
+  color: rgba(43, 35, 38, 0.7);
+}
+
+/* ===== 強調カード（ファミリー産後ケア） ===== */
+
+.price-card--highlight {
+  background: var(--card-hi);
+  border: 1.5px solid var(--accent2);
+  padding: 22px 26px;
+  box-shadow: 0 10px 26px rgba(43, 35, 38, 0.08);
+}
+
+.price-card--highlight .price-card-head {
+  margin-bottom: 8px;
+}
+
+.price-card--highlight .price-row--top {
+  border-top-color: var(--line-mid);
+}
+
+.badge {
+  flex-shrink: 0;
+  font-size: 11px;
+  font-weight: 600;
+  color: #fff;
+  background: var(--accent);
+  border-radius: 999px;
+  padding: 3px 11px;
+  letter-spacing: 0.06em;
+}
+
+.price-card-lead {
+  font-size: 12.5px;
+  line-height: 1.85;
+  color: var(--ink-66);
+  margin: 0 0 2px;
+  text-wrap: pretty;
+}
+
+/* ===== サービス内容 ===== */
+
+.service-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 20px 26px 22px;
+  margin-bottom: 14px;
+  box-shadow: var(--shadow-card);
+}
+
+.service-group-title {
+  font-family: var(--serif);
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 2px;
+}
+
+/* ===== 産後ケア ===== */
+
+.care-callout {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: rgba(196, 18, 46, 0.05);
+  border-radius: 12px;
+  padding: 14px 16px;
+  margin-bottom: 32px;
+}
+
+.care-callout svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.care-callout p {
+  font-size: 12.5px;
+  line-height: 1.8;
+  color: rgba(43, 35, 38, 0.65);
+  margin: 0;
+  text-wrap: pretty;
+}
+
+.care-section-title {
+  font-family: var(--serif);
+  font-size: 21px;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 0 0 16px;
+}
+
+.care-section-title--gap {
+  margin-top: 36px;
+}
+
+.care-town {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 18px 22px;
+  margin-bottom: 12px;
+  box-shadow: 0 6px 18px rgba(43, 35, 38, 0.04);
+  scroll-margin-top: 90px;
+}
+
+.care-town:target {
+  background: var(--card-hi);
+  border: 1.5px solid var(--accent2);
+}
+
+.care-town-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.care-town-name {
+  font-family: var(--serif);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.care-town-types {
+  flex-shrink: 0;
+  font-size: 11px;
+  color: var(--accent);
+  background: rgba(109, 46, 70, 0.07);
+  border-radius: 999px;
+  padding: 4px 12px;
+}
+
+.care-town-row {
+  display: flex;
+  gap: 12px;
+  padding: 5px 0;
+  font-size: 13px;
+}
+
+.care-town-label {
+  flex-shrink: 0;
+  width: 44px;
+  color: rgba(43, 35, 38, 0.45);
+}
+
+.care-town-value {
+  color: var(--ink);
+}
+
+.care-town-row--times .care-town-value {
+  color: rgba(43, 35, 38, 0.7);
+  line-height: 1.6;
+}
+
+.care-town-note {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--line-soft);
+  font-size: 11.5px;
+  color: var(--ink-50);
+}
+
+/* ===== 持ち物 ===== */
+
+.bring-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  align-items: start;
+}
+
+.bring-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 20px 22px;
+  box-shadow: 0 6px 18px rgba(43, 35, 38, 0.04);
+}
+
+.bring-title {
+  font-family: var(--serif);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 13px;
+}
+
+.bring-list {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.bring-item {
+  display: flex;
+  gap: 9px;
+  align-items: flex-start;
+}
+
+.bring-item svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.bring-item span {
+  font-size: 13px;
+  line-height: 1.55;
+  color: rgba(43, 35, 38, 0.78);
+  text-wrap: pretty;
+}
+
+/* ===== あわせて見る ===== */
+
+.related {
+  margin-top: 36px;
+}
+
+.related-title {
+  font-family: var(--serif);
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 14px;
+}
+
+.related-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.related-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  background: var(--card);
+  border: 1px solid rgba(109, 46, 70, 0.1);
+  border-radius: 14px;
+  padding: 18px 20px;
+}
+
+.related-link span {
+  font-family: var(--serif);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--accent);
+}
