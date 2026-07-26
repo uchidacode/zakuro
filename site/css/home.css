@@ -184,6 +184,19 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  color: rgba(43, 35, 38, 0.66);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.calendar-nav-btn:hover:not([disabled]) {
+  background: rgba(43, 35, 38, 0.06);
+}
+
+.calendar-nav-btn[disabled] {
+  color: rgba(43, 35, 38, 0.22);
+  cursor: default;
 }
 
 .calendar-month {
@@ -253,6 +266,24 @@
 .mark-few { color: #A26769; }
 .mark-x { color: rgba(43, 35, 38, 0.42); }
 .mark-rest { color: rgba(43, 35, 38, 0.26); }
+
+.calendar-day.is-past .calendar-date,
+.calendar-day.is-past .calendar-mark {
+  color: rgba(43, 35, 38, 0.18);
+}
+
+.calendar-status {
+  grid-column: 1 / -1;
+  padding: 36px 12px;
+  text-align: center;
+  font-size: 12.5px;
+  line-height: 1.9;
+  color: var(--ink-60);
+}
+
+.calendar-status p {
+  margin: 0;
+}
 
 .calendar-legend {
   display: flex;
