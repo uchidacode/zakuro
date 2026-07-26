@@ -72,6 +72,15 @@
     display: none;
   }
 
+  .header-actions {
+    gap: 8px;
+  }
+
+  .btn-ig {
+    width: 34px;
+    height: 34px;
+  }
+
   .btn-line {
     gap: 5px;
     padding: 8px 12px;
