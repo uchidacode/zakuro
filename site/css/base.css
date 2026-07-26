@@ -91,6 +91,14 @@ button {
   margin: 0 auto;
 }
 
+/* モバイル専用要素（実体は css/mobile*.css で定義） */
+.header-menu-btn,
+.mobile-cta,
+.page-back,
+.page-menu {
+  display: none;
+}
+
 .section-title {
   font-family: var(--serif);
   font-size: 30px;
@@ -200,6 +208,33 @@ button {
 
 .btn-line:hover {
   color: #fff;
+}
+
+/* viewport が device-width になったため、中間幅ではナビを詰めて収める。
+   900px 以下は css/mobile*.css のモバイルレイアウトが上書きする */
+@media (max-width: 1180px) {
+  .site-header {
+    gap: 14px;
+    padding: 0 20px;
+  }
+
+  .site-nav {
+    gap: 15px;
+  }
+
+  .brand-sub {
+    display: none;
+  }
+}
+
+@media (max-width: 1000px) {
+  .site-nav {
+    gap: 11px;
+  }
+
+  .site-nav a {
+    font-size: 12.5px;
+  }
 }
 
 /* ===== フッター ===== */

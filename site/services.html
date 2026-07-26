@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=1320">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>サービス内容｜ざくろの木助産院</title>
 <meta name="description" content="ざくろの木助産院（埼玉県久喜市栗橋）の相談・ケア・教室のご案内。育児相談、授乳相談・乳房マッサージ、ベビーマッサージ教室、ユーファイ（北タイの産後ケア）など。すべて完全予約制です。">
 <link rel="icon" type="image/png" href="assets/zakuro-icon.png">
@@ -11,8 +11,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/base.css">
 <link rel="stylesheet" href="css/subpage.css">
+<link rel="stylesheet" href="css/mobile.css">
+<link rel="stylesheet" href="css/mobile-subpage.css">
+<script src="js/mobile-nav.js" defer></script>
 </head>
-<body>
+<body class="page-sub">
 
 <header class="site-header">
   <a class="brand" href="./">
@@ -41,6 +44,12 @@
   <div class="page-hero">
     <img src="assets/facility-02.jpg" alt="トリートメントルーム">
     <div class="page-hero-scrim"></div>
+    <a class="page-back" href="./" aria-label="トップへ戻る">
+      <svg width="9" height="16" viewBox="0 0 9 16" fill="none" aria-hidden="true"><path d="M8 1 1 8l7 7" stroke="var(--accent)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+    <button class="page-menu" type="button" aria-label="メニュー" aria-expanded="false" aria-controls="site-drawer" data-drawer-open>
+      <span></span><span></span><span></span>
+    </button>
     <div class="page-hero-copy">
       <div class="container">
         <div class="page-hero-eyebrow">相談・ケア・教室</div>
@@ -183,6 +192,48 @@
     <div class="footer-copy">© 2026 ざくろの木助産院</div>
   </div>
 </footer>
+
+
+<!-- ===== モバイルドロワーメニュー（全4ページで同一に保つこと） ===== -->
+<div class="drawer" id="site-drawer" hidden>
+  <div class="drawer-overlay" data-drawer-close></div>
+  <div class="drawer-panel" role="dialog" aria-modal="true" aria-label="メニュー">
+    <div class="drawer-head">
+      <img src="assets/zakuro-icon.png" alt="ざくろの木助産院">
+      <button class="drawer-close" type="button" aria-label="閉じる" data-drawer-close>
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 4l12 12M16 4L4 16" stroke="#2B2326" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <nav class="drawer-nav" aria-label="メニュー">
+      <a href="./#availability"><span>今月の空き状況</span><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M6 3l5 5-5 5" stroke="var(--accent2)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a href="birth.html"><span>分娩費用</span><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M6 3l5 5-5 5" stroke="var(--accent2)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a href="care.html"><span>産後ケア</span><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M6 3l5 5-5 5" stroke="var(--accent2)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a href="services.html"><span>サービス内容</span><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M6 3l5 5-5 5" stroke="var(--accent2)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a href="./#flow"><span>ご利用までの流れ</span><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M6 3l5 5-5 5" stroke="var(--accent2)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a href="./#about"><span>助産院について</span><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M6 3l5 5-5 5" stroke="var(--accent2)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a href="./#staff"><span>スタッフ紹介</span><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M6 3l5 5-5 5" stroke="var(--accent2)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a href="./#access"><span>アクセス</span><svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M6 3l5 5-5 5" stroke="var(--accent2)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </nav>
+    <div class="drawer-foot">
+      <a class="drawer-line" href="https://lin.ee/fa6u5WF" target="_blank" rel="noopener">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M4 4h16a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-8l-5 4v-4H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/></svg>
+        LINEで相談する
+      </a>
+      <div class="drawer-contacts">
+        <a href="tel:09017001103">TEL　090-1700-1103</a>
+        <a href="https://www.instagram.com/zakuronoki.jyosanin" target="_blank" rel="noopener">Instagram　@zakuronoki.jyosanin</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== モバイル追従LINE CTA ===== -->
+<div class="mobile-cta">
+  <a href="https://lin.ee/fa6u5WF" target="_blank" rel="noopener">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M4 4h16a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-8l-5 4v-4H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/></svg>
+    LINEで相談する
+  </a>
+</div>
 
 </body>
 </html>

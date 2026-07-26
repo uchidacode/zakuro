@@ -1,0 +1,468 @@
+/* ざくろの木助産院 — トップページ（モバイル） */
+
+@media (max-width: 900px) {
+
+  .section-title {
+    font-size: 24px;
+    margin-bottom: 8px;
+  }
+
+  /* ===== ヒーロー ===== */
+
+  .hero {
+    display: flex;
+    flex-direction: column-reverse;
+    height: auto;
+    max-width: none;
+  }
+
+  .hero-media {
+    height: 366px;
+  }
+
+  /* 上端はヘッダーの可読性、下端はキャッチコピーへのなじませ */
+  .hero-media::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 150px;
+    background: linear-gradient(to bottom, rgba(243, 234, 224, 0.92), rgba(243, 234, 224, 0));
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .hero-media::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 120px;
+    background: linear-gradient(to top, var(--paper), rgba(243, 234, 224, 0));
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .hero-fade {
+    display: none;
+  }
+
+  .hero-copy {
+    padding: 20px 26px 30px;
+  }
+
+  .hero-eyebrow {
+    font-size: 11.5px;
+    letter-spacing: 0.18em;
+    margin-bottom: 12px;
+  }
+
+  .hero-title {
+    font-size: 29px;
+    line-height: 1.38;
+    margin-bottom: 15px;
+  }
+
+  .hero-title .marker {
+    background: linear-gradient(transparent 56%, rgba(255, 216, 96, 0.62) 56%);
+  }
+
+  .hero-lead {
+    font-size: 13.5px;
+    line-height: 1.95;
+    margin-bottom: 16px;
+  }
+
+  .hero-hours {
+    font-size: 12.5px;
+    margin-bottom: 13px;
+  }
+
+  .btn-availability {
+    gap: 9px;
+    padding: 10px 16px;
+    font-size: 12.5px;
+  }
+
+  /* ===== 今月の空き状況 ===== */
+
+  .availability {
+    padding: 8px 22px 32px;
+    scroll-margin-top: 64px;
+  }
+
+  /* 見出し→カード→注記の縦並びに組み替える（PCの align-items: start を打ち消す） */
+  .availability-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .availability-copy {
+    display: contents;
+  }
+
+  .availability-copy .section-title {
+    order: 1;
+    padding-top: 0;
+    margin-bottom: 8px;
+  }
+
+  .availability-lead {
+    order: 2;
+    font-size: 12.5px;
+    line-height: 1.8;
+    color: var(--ink-60);
+    margin-bottom: 16px;
+  }
+
+  .calendar-card {
+    order: 3;
+    padding: 18px 16px 16px;
+  }
+
+  .availability-note {
+    order: 4;
+    font-size: 12px;
+    line-height: 1.85;
+    margin: 14px 2px 0;
+  }
+
+  .calendar-month {
+    font-size: 17px;
+  }
+
+  .calendar-day {
+    aspect-ratio: 1 / 1.12;
+  }
+
+  .calendar-date {
+    font-size: 10px;
+  }
+
+  .calendar-legend {
+    gap: 14px;
+  }
+
+  .calendar-legend span:last-child {
+    font-size: 11.5px;
+  }
+
+  .calendar-cta {
+    margin-top: 13px;
+    height: 46px;
+    font-size: 13.5px;
+  }
+
+  /* ===== 3つの入口 ===== */
+
+  .entrances {
+    padding: 10px 22px 36px;
+  }
+
+  .entrances-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .entrance-thumb {
+    aspect-ratio: 20 / 9;
+  }
+
+  .entrance-body {
+    padding: 15px 17px 16px;
+  }
+
+  .entrance-title {
+    font-size: 18px;
+  }
+
+  .entrance-desc {
+    font-size: 12.5px;
+    line-height: 1.75;
+    margin-top: 7px;
+  }
+
+  /* ===== お住まいの市を選ぶ ===== */
+
+  .towns {
+    padding: 4px 22px 38px;
+  }
+
+  .towns-lead {
+    font-size: 12.5px;
+    line-height: 1.8;
+    margin-bottom: 18px;
+  }
+
+  .towns-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .town-card {
+    gap: 3px;
+    min-height: 74px;
+    padding: 12px 14px;
+  }
+
+  .town-card svg {
+    top: 13px;
+    right: 13px;
+  }
+
+  .town-name {
+    font-size: 16px;
+  }
+
+  .town-hint {
+    font-size: 10.5px;
+  }
+
+  .town-card--other .town-name {
+    font-size: 15px;
+  }
+
+  .towns-note {
+    font-size: 12px;
+    line-height: 1.8;
+    margin-top: 16px;
+  }
+
+  /* ===== ご利用までの流れ ===== */
+
+  .flow {
+    padding: 2px 22px 42px;
+    scroll-margin-top: 64px;
+  }
+
+  .flow-lead {
+    font-size: 12.5px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+  }
+
+  .flow-line {
+    display: none;
+  }
+
+  .flow-steps {
+    display: block;
+  }
+
+  /* 横並びから縦のタイムラインへ */
+  .flow-step {
+    position: relative;
+    padding: 0 0 26px 52px;
+  }
+
+  .flow-step:last-child {
+    padding-bottom: 0;
+  }
+
+  .flow-step:not(:last-child)::before {
+    content: '';
+    position: absolute;
+    left: 18px;
+    top: 42px;
+    bottom: 6px;
+    width: 1px;
+    background: rgba(109, 46, 70, 0.18);
+  }
+
+  .flow-num {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 36px;
+    height: 36px;
+    font-size: 14px;
+    margin: 0;
+  }
+
+  .flow-step h3 {
+    font-size: 17px;
+    margin: 7px 0 6px;
+  }
+
+  .flow-step p {
+    font-size: 12.5px;
+    line-height: 1.8;
+  }
+
+  /* ===== 助産院について ===== */
+
+  .about {
+    padding: 38px 22px 40px;
+    scroll-margin-top: 64px;
+  }
+
+  .about .section-title {
+    margin-bottom: 10px;
+  }
+
+  .about-lead {
+    font-size: 13px;
+    line-height: 1.9;
+    margin-bottom: 20px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 30px;
+  }
+
+  .gallery-label {
+    margin-top: 7px;
+    font-size: 12px;
+  }
+
+  .meals-title {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+
+  .meals-lead {
+    font-size: 12.5px;
+    line-height: 1.85;
+    margin-bottom: 14px;
+  }
+
+  .meals-strip {
+    gap: 10px;
+    margin: 0 -22px;
+    padding: 2px 22px 10px;
+  }
+
+  .meal-item {
+    width: 150px;
+  }
+
+  /* ===== スタッフ ===== */
+
+  .staff {
+    padding: 34px 22px 38px;
+    scroll-margin-top: 64px;
+  }
+
+  .staff-lead {
+    font-size: 12.5px;
+    line-height: 1.8;
+    margin-bottom: 18px;
+  }
+
+  .director-card {
+    gap: 14px;
+    padding: 14px;
+    margin-bottom: 20px;
+  }
+
+  .director-photo {
+    width: 96px;
+  }
+
+  .director-role {
+    font-size: 10.5px;
+  }
+
+  .director-name {
+    font-size: 19px;
+    margin: 3px 0 7px;
+  }
+
+  .director-bio {
+    font-size: 12px;
+    line-height: 1.7;
+  }
+
+  .staff-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px 10px;
+  }
+
+  .staff-role {
+    font-size: 10px;
+  }
+
+  /* ===== 場所と時間 ===== */
+
+  .access {
+    padding: 38px 22px 40px;
+    scroll-margin-top: 64px;
+  }
+
+  .access .section-title {
+    margin-bottom: 16px;
+  }
+
+  .access-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .access-map {
+    margin-bottom: 20px;
+  }
+
+  .access-row {
+    gap: 14px;
+    padding: 13px 0;
+  }
+
+  .access-label {
+    width: 62px;
+    font-size: 11px;
+  }
+
+  .access-value {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .access-value .muted {
+    font-size: 12px;
+  }
+
+  /* ===== フォトライトボックス ===== */
+
+  .lightbox-head {
+    padding: 14px 18px 8px;
+  }
+
+  .lightbox-label {
+    font-size: 14px;
+  }
+
+  .lightbox-img {
+    max-width: 100%;
+  }
+
+  .lightbox-prev,
+  .lightbox-next {
+    width: 34%;
+  }
+
+  .lightbox-prev {
+    padding-left: 10px;
+  }
+
+  .lightbox-next {
+    padding-right: 10px;
+  }
+
+  .lightbox-thumbs {
+    padding: 2px 18px;
+  }
+
+  .lightbox-thumb {
+    width: 52px;
+    height: 52px;
+  }
+}

@@ -1,0 +1,336 @@
+/* ざくろの木助産院 — モバイル共通（ヘッダー・ドロワー・追従CTA・フッター） */
+
+/* ドロワーはモバイル専用。開いたまま画面を広げた場合の残留を防ぐ */
+@media (min-width: 901px) {
+  .drawer {
+    display: none !important;
+  }
+}
+
+@media (max-width: 900px) {
+
+  @keyframes drawer-in {
+    from { transform: translateX(100%); }
+    to { transform: translateX(0); }
+  }
+
+  /* ===== ヘッダー ===== */
+
+  /* サブページはバナー上の戻る・メニューボタンに置き換える */
+  .page-sub .site-header {
+    display: none;
+  }
+
+  /* ホームはヒーローに重ねる透明ヘッダー。スクロール後は固定ヘッダーに切り替わる */
+  .page-home .site-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: auto;
+    gap: 10px;
+    padding: 12px 12px 8px 20px;
+    background: transparent;
+    border-bottom: none;
+  }
+
+  .page-home .site-header.is-stuck {
+    position: fixed;
+    padding: 8px 12px 8px 20px;
+    background: rgba(243, 234, 224, 0.92);
+    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--line-mid);
+    animation: drawer-fade 0.22s ease;
+  }
+
+  .brand {
+    gap: 9px;
+  }
+
+  .brand img {
+    height: 36px;
+  }
+
+  .site-header.is-stuck .brand img {
+    height: 28px;
+  }
+
+  .brand-name {
+    font-size: 15px;
+  }
+
+  .site-header.is-stuck .brand-name {
+    font-size: 14px;
+  }
+
+  .brand-sub {
+    display: none;
+  }
+
+  .site-nav {
+    display: none;
+  }
+
+  .btn-line {
+    gap: 5px;
+    padding: 8px 12px;
+    font-size: 12.5px;
+  }
+
+  .btn-line-suffix {
+    display: none;
+  }
+
+  .header-menu-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .header-menu-btn span {
+    display: block;
+    width: 22px;
+    height: 1.5px;
+    background: var(--ink);
+  }
+
+  /* ===== ドロワーメニュー ===== */
+
+  .drawer {
+    position: fixed;
+    inset: 0;
+    z-index: 80;
+  }
+
+  .drawer[hidden] {
+    display: none;
+  }
+
+  body.drawer-open {
+    overflow: hidden;
+  }
+
+  .drawer-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(40, 18, 26, 0.45);
+    animation: drawer-fade 0.24s ease;
+  }
+
+  .drawer-panel {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 84%;
+    max-width: 320px;
+    background: var(--paper);
+    box-shadow: -14px 0 44px rgba(40, 18, 26, 0.32);
+    display: flex;
+    flex-direction: column;
+    animation: drawer-in 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .drawer-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 22px 12px;
+  }
+
+  .drawer-head img {
+    height: 34px;
+    width: auto;
+    display: block;
+  }
+
+  .drawer-close {
+    width: 38px;
+    height: 38px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  .drawer-nav {
+    flex: 1;
+    overflow-y: auto;
+    padding: 8px 10px;
+  }
+
+  .drawer-nav a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 15px 14px;
+    border-bottom: 1px solid rgba(109, 46, 70, 0.1);
+  }
+
+  .drawer-nav a span {
+    font-family: var(--serif);
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--ink);
+    letter-spacing: 0.02em;
+  }
+
+  .drawer-nav a:hover span,
+  .drawer-nav a:active span {
+    color: var(--accent);
+  }
+
+  .drawer-foot {
+    padding: 16px 22px 24px;
+    padding-bottom: max(24px, env(safe-area-inset-bottom));
+    border-top: 1px solid var(--line-mid);
+  }
+
+  .drawer-line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    height: 50px;
+    background: var(--accent);
+    color: #fff;
+    border-radius: 13px;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    margin-bottom: 16px;
+  }
+
+  .drawer-line:hover {
+    color: #fff;
+  }
+
+  .drawer-contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    font-size: 12.5px;
+  }
+
+  .drawer-contacts a {
+    color: rgba(43, 35, 38, 0.7);
+  }
+
+  /* ===== 追従LINE CTA ===== */
+
+  .mobile-cta {
+    display: block;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 60;
+    padding: 10px 22px 14px;
+    padding-bottom: max(14px, env(safe-area-inset-bottom));
+    background: var(--paper);
+    border-top: 1px solid var(--line-mid);
+    box-shadow: 0 -8px 22px rgba(43, 35, 38, 0.09);
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+  }
+
+  .mobile-cta.is-hidden {
+    transform: translateY(115%);
+  }
+
+  .mobile-cta a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    height: 50px;
+    background: var(--accent);
+    color: #fff;
+    border-radius: 14px;
+    font-size: 15.5px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    box-shadow: 0 8px 18px rgba(109, 46, 70, 0.28);
+  }
+
+  .mobile-cta a:hover {
+    color: #fff;
+  }
+
+  /* ===== フッター ===== */
+
+  .site-footer {
+    padding: 42px 26px 104px;
+  }
+
+  .footer-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .footer-title {
+    font-size: 26px;
+    margin-bottom: 12px;
+  }
+
+  .footer-lead {
+    font-size: 13px;
+    line-height: 1.9;
+    margin-bottom: 22px;
+  }
+
+  .footer-line-row {
+    display: block;
+  }
+
+  .btn-line-big {
+    display: flex;
+    width: 100%;
+    height: 54px;
+    padding: 0;
+  }
+
+  .footer-qr {
+    display: none;
+  }
+
+  .footer-grid > div:last-child {
+    margin-top: 28px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(243, 234, 224, 0.18);
+  }
+
+  .footer-org {
+    font-size: 15px;
+    margin-bottom: 12px;
+  }
+
+  .footer-info {
+    font-size: 12px;
+    line-height: 2;
+  }
+
+  .footer-rule {
+    display: none;
+  }
+
+  .footer-copy {
+    font-size: 10.5px;
+    margin-top: 24px;
+  }
+}

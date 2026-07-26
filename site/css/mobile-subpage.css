@@ -1,0 +1,341 @@
+/* ざくろの木助産院 — 下層ページ（モバイル） */
+
+@media (max-width: 900px) {
+
+  /* ===== ページヒーロー ===== */
+
+  .page-hero {
+    height: 200px;
+  }
+
+  .page-hero--birth {
+    height: 210px;
+  }
+
+  /* 上端にも薄い影を足し、戻る・メニューボタンの視認性を保つ */
+  .page-hero-scrim {
+    background: linear-gradient(to top, rgba(40, 18, 26, 0.82), rgba(40, 18, 26, 0.12) 58%, rgba(40, 18, 26, 0.4));
+  }
+
+  .page-hero-copy {
+    bottom: 20px;
+    padding: 0 24px;
+  }
+
+  .page-hero-eyebrow {
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    margin-bottom: 6px;
+  }
+
+  .page-hero-title {
+    font-size: 27px;
+  }
+
+  .page-back {
+    position: absolute;
+    top: 14px;
+    left: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.22);
+  }
+
+  .page-menu {
+    position: absolute;
+    top: 14px;
+    right: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.22);
+    cursor: pointer;
+  }
+
+  .page-menu span {
+    display: block;
+    width: 18px;
+    height: 1.5px;
+    background: var(--ink);
+  }
+
+  /* ===== 本文 ===== */
+
+  .page-body {
+    padding: 22px 24px 104px;
+  }
+
+  .page-intro {
+    font-size: 13px;
+    line-height: 1.9;
+    margin-bottom: 22px;
+  }
+
+  .page-intro--tight {
+    margin-bottom: 12px;
+  }
+
+  .page-note {
+    font-size: 12px;
+    line-height: 1.85;
+    margin-top: 22px;
+  }
+
+  /* ===== 料金カード ===== */
+
+  .price-card {
+    padding: 20px;
+    margin-bottom: 13px;
+  }
+
+  .price-card-title {
+    font-size: 17px;
+  }
+
+  .price-row,
+  .price-row--top {
+    padding: 12px 0;
+  }
+
+  .price-item-name {
+    font-size: 13.5px;
+  }
+
+  .price-item-note {
+    font-size: 11px;
+    margin-top: 3px;
+  }
+
+  .price-value {
+    font-size: 16px;
+  }
+
+  .price-value--lg {
+    font-size: 17px;
+  }
+
+  .price-value--sm {
+    font-size: 15px;
+  }
+
+  .price-unit {
+    font-size: 11px;
+  }
+
+  .price-card-foot {
+    font-size: 11px;
+    margin-top: 13px;
+    padding-top: 13px;
+  }
+
+  /* ===== 基本料金の分岐図 → 縦積み ===== */
+
+  .branch-root,
+  .branch-stem,
+  .branch-cross {
+    display: none;
+  }
+
+  .branch-cols {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .branch-box {
+    padding: 16px 18px;
+  }
+
+  .branch-price {
+    font-size: 22px;
+  }
+
+  /* ===== 出産育児一時金 ===== */
+
+  .grant-card {
+    padding: 22px 20px;
+    margin: 20px 0;
+  }
+
+  .grant-title {
+    font-size: 16px;
+  }
+
+  .grant-lead {
+    font-size: 12.5px;
+    line-height: 1.85;
+    margin-bottom: 18px;
+  }
+
+  .grant-example {
+    padding: 15px 16px;
+  }
+
+  .grant-example-caption {
+    font-size: 11px;
+    margin-bottom: 11px;
+  }
+
+  .grant-line {
+    font-size: 12.5px;
+  }
+
+  .grant-result-value {
+    font-size: 24px;
+  }
+
+  /* ===== 箇条書き・嘱託医療機関 ===== */
+
+  .bullet p {
+    font-size: 12.5px;
+    line-height: 1.8;
+  }
+
+  .bullet-list--loose {
+    gap: 13px;
+  }
+
+  .bullet-list--loose .bullet p {
+    font-size: 12.5px;
+    line-height: 1.75;
+  }
+
+  .hospital-name {
+    font-size: 15px;
+  }
+
+  .hospital-dept {
+    font-size: 12px;
+  }
+
+  .hospital-addr {
+    font-size: 12.5px;
+    line-height: 1.8;
+  }
+
+  /* ===== 強調カード・サービス ===== */
+
+  .price-card--highlight {
+    padding: 18px 20px;
+  }
+
+  .badge {
+    font-size: 10.5px;
+    padding: 3px 10px;
+  }
+
+  .price-card-lead {
+    font-size: 12px;
+    line-height: 1.75;
+  }
+
+  .service-card {
+    padding: 16px 20px 18px;
+  }
+
+  .service-group-title {
+    font-size: 16px;
+  }
+
+  /* ===== 産後ケア ===== */
+
+  .care-callout {
+    padding: 12px 14px;
+    margin-bottom: 26px;
+  }
+
+  .care-callout p {
+    font-size: 12px;
+    line-height: 1.7;
+  }
+
+  .care-section-title {
+    font-size: 19px;
+    margin-bottom: 14px;
+  }
+
+  .care-section-title--gap {
+    margin-top: 30px;
+  }
+
+  .care-town {
+    padding: 15px 18px 16px;
+    margin-bottom: 11px;
+    scroll-margin-top: 20px;
+  }
+
+  .care-town-name {
+    font-size: 17px;
+  }
+
+  .care-town-types {
+    font-size: 10.5px;
+    padding: 4px 11px;
+  }
+
+  .care-town-row {
+    font-size: 12px;
+  }
+
+  .care-town-label {
+    width: 40px;
+  }
+
+  .care-town-note {
+    font-size: 11px;
+  }
+
+  .bring-grid {
+    grid-template-columns: 1fr;
+    gap: 11px;
+  }
+
+  .bring-card {
+    padding: 18px 20px;
+  }
+
+  .bring-title {
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+
+  .bring-item span {
+    font-size: 12.5px;
+  }
+
+  /* ===== あわせて見る ===== */
+
+  .related {
+    margin-top: 30px;
+  }
+
+  .related-title {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+
+  .related-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .related-link {
+    padding: 16px 17px;
+  }
+
+  .related-link span {
+    font-size: 15px;
+  }
+}
