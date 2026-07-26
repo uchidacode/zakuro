@@ -7,9 +7,8 @@
   height: 250px;
   overflow: hidden;
   background: var(--photo-bg);
-  /* ホームのヒーローと同様に1320px幅想定を保ち、
-     超ワイド画面で写真が横長に潰れて見えなくなるのを防ぐ */
-  max-width: 1320px;
+  /* 本文カラムに寄せた幅で中央配置し、ワイド画面で写真が横長に潰れないようにする */
+  max-width: 800px;
   margin: 0 auto;
 }
 
@@ -41,7 +40,8 @@
   left: 0;
   right: 0;
   bottom: 30px;
-  padding: 0 56px;
+  /* 本文テキストの左端（720px幅カラム）とタイトルを揃える */
+  padding: 0 40px;
 }
 
 .page-hero-eyebrow {

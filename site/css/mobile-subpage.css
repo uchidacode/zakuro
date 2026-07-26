@@ -6,6 +6,7 @@
 
   .page-hero {
     height: 200px;
+    max-width: none;
   }
 
   .page-hero--birth {
