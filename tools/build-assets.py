@@ -14,8 +14,21 @@ ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / 'zakuronoki-assets'
 OUT = ROOT / 'site' / 'assets'
 
+# 院から提供された撮り直し分。Wix原本にキャプション文字が焼き込まれていた4枚
+# （すいか・トリートメントルーム・ざくろ・りんご）と、お手洗い・共有リビングを
+# こちらの原本に差し替える。
+FACILITY = {
+    1: SRC / '07-provided' / 'facility-01-suika.jpg',
+    2: SRC / '07-provided' / 'facility-02-treatment.jpg',
+    3: SRC / '07-provided' / 'facility-03-zakuro.jpg',
+    4: SRC / '07-provided' / 'facility-04-ringo.jpg',
+    5: SRC / '07-provided' / 'facility-05-toilet.jpg',
+    8: SRC / '07-provided' / 'facility-08-living.jpg',
+}
+
 JPG = [  # (出力名, 元ファイル, 長辺px)
-    *[(f'facility-{i:02d}.jpg', SRC / '02-facility' / f'facility-{i:02d}.jpg', 1600)
+    *[(f'facility-{i:02d}.jpg',
+       FACILITY.get(i, SRC / '02-facility' / f'facility-{i:02d}.jpg'), 1600)
       for i in range(1, 11)],
     *[(f'food-{i:02d}.jpg', SRC / '03-food' / f'food-{i:02d}.jpg', 1600)
       for i in range(1, 10)],
