@@ -7,6 +7,10 @@
   height: 250px;
   overflow: hidden;
   background: var(--photo-bg);
+  /* ホームのヒーローと同様に1320px幅想定を保ち、
+     超ワイド画面で写真が横長に潰れて見えなくなるのを防ぐ */
+  max-width: 1320px;
+  margin: 0 auto;
 }
 
 .page-hero--birth {
